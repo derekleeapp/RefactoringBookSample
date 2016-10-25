@@ -3,8 +3,8 @@ class Movie {
     static let Regular = 0;
     static let NewRelease = 1;
 
-    private let title: String
-    private var priceCode: Int
+    let title: String
+    var priceCode: Int
 
     init(title: String, priceCode: Int) {
         self.title = title
