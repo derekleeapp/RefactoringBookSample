@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		520ACE4B1DC0165C00118BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE4A1DC0165C00118BB2 /* AppDelegate.swift */; };
-		520ACE4D1DC0165C00118BB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE4C1DC0165C00118BB2 /* ViewController.swift */; };
-		520ACE501DC0165C00118BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520ACE4E1DC0165C00118BB2 /* Main.storyboard */; };
-		520ACE521DC0165C00118BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520ACE511DC0165C00118BB2 /* Assets.xcassets */; };
-		520ACE551DC0165C00118BB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520ACE531DC0165C00118BB2 /* LaunchScreen.storyboard */; };
 		520ACE601DC0165C00118BB2 /* RefactoringBookSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE5F1DC0165C00118BB2 /* RefactoringBookSampleTests.swift */; };
+		520ACE761DC016D300118BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE6F1DC016D300118BB2 /* AppDelegate.swift */; };
+		520ACE771DC016D300118BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520ACE701DC016D300118BB2 /* Assets.xcassets */; };
+		520ACE791DC016D300118BB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520ACE721DC016D300118BB2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,15 +25,13 @@
 
 /* Begin PBXFileReference section */
 		520ACE471DC0165C00118BB2 /* RefactoringBookSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactoringBookSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		520ACE4A1DC0165C00118BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		520ACE4C1DC0165C00118BB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		520ACE4F1DC0165C00118BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		520ACE511DC0165C00118BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		520ACE541DC0165C00118BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		520ACE561DC0165C00118BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		520ACE5B1DC0165C00118BB2 /* RefactoringBookSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RefactoringBookSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		520ACE5F1DC0165C00118BB2 /* RefactoringBookSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoringBookSampleTests.swift; sourceTree = "<group>"; };
-		520ACE611DC0165C00118BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520ACE6B1DC016CC00118BB2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520ACE6F1DC016D300118BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		520ACE701DC016D300118BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		520ACE711DC016D300118BB2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520ACE721DC016D300118BB2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +73,10 @@
 		520ACE491DC0165C00118BB2 /* RefactoringBookSample */ = {
 			isa = PBXGroup;
 			children = (
-				520ACE4A1DC0165C00118BB2 /* AppDelegate.swift */,
-				520ACE4C1DC0165C00118BB2 /* ViewController.swift */,
-				520ACE4E1DC0165C00118BB2 /* Main.storyboard */,
-				520ACE511DC0165C00118BB2 /* Assets.xcassets */,
-				520ACE531DC0165C00118BB2 /* LaunchScreen.storyboard */,
-				520ACE561DC0165C00118BB2 /* Info.plist */,
+				520ACE6E1DC016D300118BB2 /* Application */,
+				520ACE731DC016D300118BB2 /* Components */,
+				520ACE741DC016D300118BB2 /* Frameworks */,
+				520ACE751DC016D300118BB2 /* UI */,
 			);
 			path = RefactoringBookSample;
 			sourceTree = "<group>";
@@ -90,10 +84,58 @@
 		520ACE5E1DC0165C00118BB2 /* RefactoringBookSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				520ACE6A1DC016CC00118BB2 /* Application */,
+				520ACE6C1DC016CC00118BB2 /* Components */,
 				520ACE5F1DC0165C00118BB2 /* RefactoringBookSampleTests.swift */,
-				520ACE611DC0165C00118BB2 /* Info.plist */,
 			);
 			path = RefactoringBookSampleTests;
+			sourceTree = "<group>";
+		};
+		520ACE6A1DC016CC00118BB2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				520ACE6B1DC016CC00118BB2 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		520ACE6C1DC016CC00118BB2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		520ACE6E1DC016D300118BB2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				520ACE6F1DC016D300118BB2 /* AppDelegate.swift */,
+				520ACE701DC016D300118BB2 /* Assets.xcassets */,
+				520ACE711DC016D300118BB2 /* Info.plist */,
+				520ACE721DC016D300118BB2 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		520ACE731DC016D300118BB2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		520ACE741DC016D300118BB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		520ACE751DC016D300118BB2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +221,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520ACE551DC0165C00118BB2 /* LaunchScreen.storyboard in Resources */,
-				520ACE521DC0165C00118BB2 /* Assets.xcassets in Resources */,
-				520ACE501DC0165C00118BB2 /* Main.storyboard in Resources */,
+				520ACE791DC016D300118BB2 /* LaunchScreen.storyboard in Resources */,
+				520ACE771DC016D300118BB2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,8 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520ACE4D1DC0165C00118BB2 /* ViewController.swift in Sources */,
-				520ACE4B1DC0165C00118BB2 /* AppDelegate.swift in Sources */,
+				520ACE761DC016D300118BB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,25 +261,6 @@
 			targetProxy = 520ACE5C1DC0165C00118BB2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		520ACE4E1DC0165C00118BB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				520ACE4F1DC0165C00118BB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		520ACE531DC0165C00118BB2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				520ACE541DC0165C00118BB2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		520ACE621DC0165C00118BB2 /* Debug */ = {
@@ -337,11 +358,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RefactoringBookSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RefactoringBookSample/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derekleeapp.RefactoringBookSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -349,11 +370,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RefactoringBookSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RefactoringBookSample/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derekleeapp.RefactoringBookSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -362,11 +383,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RefactoringBookSampleTests/Info.plist;
+				INFOPLIST_FILE = RefactoringBookSampleTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derekleeapp.RefactoringBookSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefactoringBookSample.app/RefactoringBookSample";
 			};
 			name = Debug;
@@ -376,11 +397,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RefactoringBookSampleTests/Info.plist;
+				INFOPLIST_FILE = RefactoringBookSampleTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derekleeapp.RefactoringBookSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RefactoringBookSample.app/RefactoringBookSample";
 			};
 			name = Release;
