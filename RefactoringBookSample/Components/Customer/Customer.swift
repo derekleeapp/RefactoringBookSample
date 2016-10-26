@@ -1,6 +1,6 @@
 class Customer {
     let name: String
-    private var rentals: [Rental]
+    private(set) var rentals: [Rental]
 
     init(name: String) {
         self.name = name
@@ -61,4 +61,11 @@ class Customer {
 
         return result
     }
+}
+
+extension Customer: Equatable {}
+
+func ==(lhs: Customer, rhs: Customer) -> Bool {
+    return lhs.name == rhs.name &&
+        lhs.rentals == rhs.rentals
 }

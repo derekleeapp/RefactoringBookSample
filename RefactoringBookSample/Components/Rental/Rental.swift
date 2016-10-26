@@ -7,3 +7,10 @@ class Rental {
         self.daysRented = daysRented
     }
 }
+
+extension Rental: Equatable {}
+
+func ==(lhs: Rental, rhs: Rental) -> Bool {
+    return lhs.movie == rhs.movie &&
+        lhs.daysRented == rhs.daysRented
+}

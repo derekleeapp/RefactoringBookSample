@@ -11,3 +11,10 @@ class Movie {
         self.priceCode = priceCode
     }
 }
+
+extension Movie: Equatable {}
+
+func ==(lhs: Movie, rhs: Movie) -> Bool {
+    return lhs.title == rhs.title &&
+        lhs.priceCode == rhs.priceCode
+}
