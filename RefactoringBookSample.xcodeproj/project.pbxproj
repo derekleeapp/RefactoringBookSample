@@ -16,6 +16,10 @@
 		520ACE871DC0284700118BB2 /* CustomerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE861DC0284700118BB2 /* CustomerTest.swift */; };
 		520ACE8A1DC16DB300118BB2 /* MovieFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE891DC16DB300118BB2 /* MovieFixture.swift */; };
 		520ACE8D1DC16E5A00118BB2 /* RentalFixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE8C1DC16E5A00118BB2 /* RentalFixture.swift */; };
+		523D68521DC314D600BF9119 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523D68501DC314D600BF9119 /* Nimble.framework */; };
+		523D68531DC314D600BF9119 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523D68511DC314D600BF9119 /* Quick.framework */; };
+		523D68561DC3150D00BF9119 /* Nimble.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = 523D68501DC314D600BF9119 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		523D68571DC3150D00BF9119 /* Quick.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = 523D68511DC314D600BF9119 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,21 @@
 			remoteInfo = RefactoringBookSample;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		523D68551DC314F900BF9119 /* Carthage: Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				523D68561DC3150D00BF9119 /* Nimble.framework in Carthage: Copy Files */,
+				523D68571DC3150D00BF9119 /* Quick.framework in Carthage: Copy Files */,
+			);
+			name = "Carthage: Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		520ACE471DC0165C00118BB2 /* RefactoringBookSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RefactoringBookSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +61,8 @@
 		520ACE861DC0284700118BB2 /* CustomerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerTest.swift; sourceTree = "<group>"; };
 		520ACE891DC16DB300118BB2 /* MovieFixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieFixture.swift; sourceTree = "<group>"; };
 		520ACE8C1DC16E5A00118BB2 /* RentalFixture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalFixture.swift; sourceTree = "<group>"; };
+		523D68501DC314D600BF9119 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		523D68511DC314D600BF9119 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				523D68521DC314D600BF9119 /* Nimble.framework in Frameworks */,
+				523D68531DC314D600BF9119 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +91,7 @@
 				520ACE491DC0165C00118BB2 /* RefactoringBookSample */,
 				520ACE5E1DC0165C00118BB2 /* RefactoringBookSampleTests */,
 				520ACE481DC0165C00118BB2 /* Products */,
+				523D684F1DC314D600BF9119 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +225,15 @@
 			path = Rental;
 			sourceTree = "<group>";
 		};
+		523D684F1DC314D600BF9119 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				523D68501DC314D600BF9119 /* Nimble.framework */,
+				523D68511DC314D600BF9119 /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -228,6 +261,7 @@
 				520ACE571DC0165C00118BB2 /* Sources */,
 				520ACE581DC0165C00118BB2 /* Frameworks */,
 				520ACE591DC0165C00118BB2 /* Resources */,
+				523D68551DC314F900BF9119 /* Carthage: Copy Files */,
 			);
 			buildRules = (
 			);
@@ -451,6 +485,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RefactoringBookSampleTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derekleeapp.RefactoringBookSampleTests;
@@ -465,6 +503,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = RefactoringBookSampleTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.derekleeapp.RefactoringBookSampleTests;
@@ -493,6 +535,7 @@
 				520ACE661DC0165C00118BB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		520ACE671DC0165C00118BB2 /* Build configuration list for PBXNativeTarget "RefactoringBookSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +544,7 @@
 				520ACE691DC0165C00118BB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
