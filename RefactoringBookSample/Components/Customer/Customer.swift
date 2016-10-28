@@ -19,29 +19,7 @@ class Customer {
 
         // determine amounts for each line
         for each in rentals {
-            var thisAmount: Double = 0
-
-            switch (each.movie.priceCode) {
-
-            case Movie.Regular:
-                thisAmount += 2
-                if (each.daysRented > 2) {
-                    thisAmount += Double(each.daysRented - 2) * 1.5
-                }
-
-            case Movie.NewRelease:
-                thisAmount += Double(each.daysRented) * 3
-
-            case Movie.Childrens:
-                thisAmount += 1.5
-                if (each.daysRented > 3) {
-                    thisAmount += Double(each.daysRented - 3) * 1.5
-                }
-
-            default:
-                break
-
-            }
+            let thisAmount = amountFor(each)
 
             // add frequent renter points
             frequentRenterPoints += 1
@@ -61,6 +39,34 @@ class Customer {
         result += "You earned \(frequentRenterPoints) frequent renter points"
 
         return result
+    }
+
+    private func amountFor(each: Rental) -> Double {
+        var thisAmount: Double = 0.0
+
+        switch (each.movie.priceCode) {
+
+        case Movie.Regular:
+            thisAmount += 2
+            if (each.daysRented > 2) {
+                thisAmount += Double(each.daysRented - 2) * 1.5
+            }
+
+        case Movie.NewRelease:
+            thisAmount += Double(each.daysRented) * 3
+
+        case Movie.Childrens:
+            thisAmount += 1.5
+            if (each.daysRented > 3) {
+                thisAmount += Double(each.daysRented - 3) * 1.5
+            }
+
+        default:
+            break
+
+        }
+
+        return thisAmount
     }
 }
 
