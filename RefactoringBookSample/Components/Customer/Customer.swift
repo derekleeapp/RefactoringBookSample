@@ -42,31 +42,7 @@ class Customer {
     }
 
     private func amountFor(rental: Rental) -> Double {
-        var result: Double = 0.0
-
-        switch (rental.movie.priceCode) {
-
-        case Movie.Regular:
-            result += 2
-            if (rental.daysRented > 2) {
-                result += Double(rental.daysRented - 2) * 1.5
-            }
-
-        case Movie.NewRelease:
-            result += Double(rental.daysRented) * 3
-
-        case Movie.Childrens:
-            result += 1.5
-            if (rental.daysRented > 3) {
-                result += Double(rental.daysRented - 3) * 1.5
-            }
-
-        default:
-            break
-
-        }
-
-        return result
+        return rental.getCharge()
     }
 }
 
