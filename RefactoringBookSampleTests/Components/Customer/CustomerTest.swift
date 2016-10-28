@@ -133,6 +133,29 @@ class CustomerTest: QuickSpec {
                     expect(actualStatement).to(equal(expectedStatement))
                 }
             }
+
+            it("reflects charges and points for multiple rentals") {
+                let regularRental = RentalFixture.Regular(days: 1)
+                customer.addRental(regularRental)
+
+                let newReleaseRental = RentalFixture.NewRelease(days: 1)
+                customer.addRental(newReleaseRental)
+
+                let childrensRental = RentalFixture.Childrens(days: 1)
+                customer.addRental(childrensRental)
+
+
+                let actualStatement = customer.statement()
+
+
+                let expectedStatement =
+                    "Rental Record for John Doe\n" +
+                    "\tDie Hard\t2.0\n" +
+                    "\tHunger Games\t3.0\n" +
+                    "\tMinions\t1.5\n" +
+                    "Amount owed is 6.5\nYou earned 3 frequent renter points"
+                expect(actualStatement).to(equal(expectedStatement))
+            }
         }
     }
 }
