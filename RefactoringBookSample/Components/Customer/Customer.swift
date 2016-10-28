@@ -40,6 +40,7 @@ class Customer {
 
             default:
                 break
+
             }
 
             // add frequent renter points
