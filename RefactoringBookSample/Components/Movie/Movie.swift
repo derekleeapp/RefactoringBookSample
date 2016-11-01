@@ -25,6 +25,21 @@ class Movie {
         }
     }
 
+    init(regularMovieTitle title: String) {
+        self.title = title
+        price = RegularPrice()
+    }
+
+    init(newReleaseMovieTitle title: String) {
+        self.title = title
+        price = NewReleasePrice()
+    }
+
+    init(childrensMovieTitle title: String) {
+        self.title = title
+        price = ChildrensPrice()
+    }
+
     func getCharge(daysRented: Int) -> Double {
         return price.getCharge(daysRented)
     }
