@@ -24,7 +24,7 @@ class CustomerTest: QuickSpec {
             expect(customer.rentals).to(equal(expectedRentals))
         }
 
-        describe("the customer statement") {
+        describe("the text-only statement") {
 
             it("indicates when there have been no rentals") {
                 let actualStatement = customer.statement()
@@ -154,6 +154,24 @@ class CustomerTest: QuickSpec {
                     "\tHunger Games\t3.0\n" +
                     "\tMinions\t1.5\n" +
                     "Amount owed is 6.5\nYou earned 3 frequent renter points"
+                expect(actualStatement).to(equal(expectedStatement))
+            }
+        }
+
+        describe("the html statement") {
+            it("reflects charges and points when a regular movie is rented for one day") {
+                let regularRental = RentalFixture.Regular(days: 1)
+                customer.addRental(regularRental)
+
+
+                let actualStatement = customer.htmlStatement()
+
+
+                let expectedStatement =
+                    "<H1>Rentals for <EM>John Doe</EM></H1><P>\n" +
+                    "Die Hard: 2.0<BR>\n" +
+                    "<P>You owe <EM>2.0</EM><P>\n" +
+                    "On this rental you earned <EM>1</EM> frequent renter points<P>"
                 expect(actualStatement).to(equal(expectedStatement))
             }
         }
