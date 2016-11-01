@@ -4,7 +4,7 @@ class Movie {
     static let NewRelease = 1;
 
     let title: String
-    private var price: Price?
+    private var price: Price
 
     init(title: String, priceCode: Int) {
         self.title = title
@@ -21,16 +21,16 @@ class Movie {
             price = ChildrensPrice()
 
         default:
-            break
+            price = NullPrice()
         }
     }
 
     func getCharge(daysRented: Int) -> Double {
-        return price?.getCharge(daysRented) ?? 0
+        return price.getCharge(daysRented)
     }
 
     func getFrequentRenterPoints(daysRented: Int) -> Int {
-        return price?.getFrequentRenterPoints(daysRented) ?? 0
+        return price.getFrequentRenterPoints(daysRented)
     }
 }
 
