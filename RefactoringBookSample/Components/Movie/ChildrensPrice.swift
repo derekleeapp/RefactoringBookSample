@@ -1,5 +1,5 @@
-struct ChildrensPrice: Price {
-    func getPriceCode() -> Int {
+class ChildrensPrice: Price {
+    override func getPriceCode() -> Int {
         return Movie.Childrens
     }
 }
