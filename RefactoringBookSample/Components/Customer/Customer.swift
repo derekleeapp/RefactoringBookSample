@@ -19,7 +19,7 @@ class Customer {
 
         // determine amounts for each line
         for each in rentals {
-            let thisAmount = amountFor(each)
+            let thisAmount = each.getCharge()
 
             // add frequent renter points
             frequentRenterPoints += 1
@@ -39,10 +39,6 @@ class Customer {
         result += "You earned \(frequentRenterPoints) frequent renter points"
 
         return result
-    }
-
-    private func amountFor(rental: Rental) -> Double {
-        return rental.getCharge()
     }
 }
 
