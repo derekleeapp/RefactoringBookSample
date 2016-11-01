@@ -4,7 +4,7 @@ class Movie {
     static let NewRelease = 1;
 
     let title: String
-    var priceCode: Int
+    private var priceCode: Int
 
     init(title: String, priceCode: Int) {
         self.title = title
