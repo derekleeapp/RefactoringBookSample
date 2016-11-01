@@ -38,6 +38,14 @@ class Movie {
 
         return result
     }
+
+    func getFrequentRenterPoints(daysRented: Int) -> Int {
+        if (priceCode == Movie.NewRelease && daysRented > 1) {
+            return 2
+        } else {
+            return 1
+        }
+    }
 }
 
 extension Movie: Equatable {}
