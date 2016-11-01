@@ -4,31 +4,25 @@ class Movie {
     static let NewRelease = 1;
 
     let title: String
-    private var priceCode: Int {
-        get {
-            return price?.getPriceCode() ?? -1
-        }
-        set(value) {
-            switch value {
-            case Movie.Regular:
-                price = RegularPrice()
-
-            case Movie.NewRelease:
-                price = NewReleasePrice()
-
-            case Movie.Childrens:
-                price = ChildrensPrice()
-
-            default:
-                break
-            }
-        }
-    }
     private var price: Price?
 
     init(title: String, priceCode: Int) {
         self.title = title
-        self.priceCode = priceCode
+
+        switch priceCode {
+
+        case Movie.Regular:
+            price = RegularPrice()
+
+        case Movie.NewRelease:
+            price = NewReleasePrice()
+
+        case Movie.Childrens:
+            price = ChildrensPrice()
+
+        default:
+            break
+        }
     }
 
     func getCharge(daysRented: Int) -> Double {
@@ -44,5 +38,5 @@ extension Movie: Equatable {}
 
 func ==(lhs: Movie, rhs: Movie) -> Bool {
     return lhs.title == rhs.title &&
-        lhs.priceCode == rhs.priceCode
+        lhs.price == rhs.price
 }

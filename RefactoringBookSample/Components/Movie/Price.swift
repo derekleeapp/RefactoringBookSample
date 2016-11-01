@@ -11,3 +11,9 @@ class Price {
         return 1
     }
 }
+
+extension Price: Equatable {}
+
+func ==(lhs: Price, rhs: Price) -> Bool {
+    return lhs.getPriceCode() == rhs.getPriceCode()
+}
