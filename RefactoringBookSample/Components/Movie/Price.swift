@@ -8,10 +8,6 @@ class Price {
     }
 
     func getFrequentRenterPoints(daysRented: Int) -> Int {
-        if (getPriceCode() == Movie.NewRelease && daysRented > 1) {
-            return 2
-        } else {
-            return 1
-        }
+        return 1
     }
 }
