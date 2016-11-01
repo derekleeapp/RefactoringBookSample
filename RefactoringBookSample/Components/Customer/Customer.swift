@@ -1,12 +1,15 @@
 class Customer {
+    // MARK: - Properties
     let name: String
     private(set) var rentals: [Rental]
 
+    // MARK: - Initialization
     init(name: String) {
         self.name = name
         self.rentals = []
     }
 
+    // MARK: - Public Methods
     func addRental(rental: Rental) {
         rentals.append(rental)
     }

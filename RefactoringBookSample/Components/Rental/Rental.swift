@@ -1,12 +1,15 @@
 class Rental {
+    // MARK: - Properties
     let movie: Movie
     private let daysRented: Int
 
+    // MARK: - Initialization
     init(movie: Movie, daysRented: Int) {
         self.movie = movie
         self.daysRented = daysRented
     }
 
+    // MARK: - Public Methods
     func getCharge() -> Double {
         return movie.getCharge(daysRented)
     }

@@ -1,7 +1,9 @@
 class Movie {
+    // MARK: - Properties
     let title: String
     private var price: Price
 
+    // MARK: - Initialization
     init(regularMovieTitle title: String) {
         self.title = title
         price = RegularPrice()
@@ -17,6 +19,7 @@ class Movie {
         price = ChildrensPrice()
     }
 
+    // MARK: - Public Methods
     func getCharge(daysRented: Int) -> Double {
         return price.getCharge(daysRented)
     }
