@@ -1,5 +1,5 @@
-class ChildrensPrice: Price {
-    override func getCharge(daysRented: Int) -> Double {
+struct ChildrensPrice: Price {
+    func getCharge(daysRented: Int) -> Double {
         var result: Double = 1.5
 
         if (daysRented > 3) {
@@ -7,5 +7,9 @@ class ChildrensPrice: Price {
         }
 
         return result
+    }
+
+    func getFrequentRenterPoints(daysRented: Int) -> Int {
+        return 1
     }
 }

@@ -1,5 +1,5 @@
-class RegularPrice: Price {
-    override func getCharge(daysRented: Int) -> Double {
+struct RegularPrice: Price {
+    func getCharge(daysRented: Int) -> Double {
         var result: Double = 2.0
 
         if (daysRented > 2) {
@@ -7,5 +7,9 @@ class RegularPrice: Price {
         }
 
         return result
+    }
+
+    func getFrequentRenterPoints(daysRented: Int) -> Int {
+        return 1
     }
 }
