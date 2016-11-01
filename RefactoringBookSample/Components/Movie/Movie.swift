@@ -37,6 +37,5 @@ class Movie {
 extension Movie: Equatable {}
 
 func ==(lhs: Movie, rhs: Movie) -> Bool {
-    return lhs.title == rhs.title &&
-        lhs.price == rhs.price
+    return lhs.title == rhs.title
 }

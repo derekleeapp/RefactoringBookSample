@@ -1,8 +1,4 @@
 class RegularPrice: Price {
-    override func getPriceCode() -> Int {
-        return Movie.Regular
-    }
-
     override func getCharge(daysRented: Int) -> Double {
         var result: Double = 2.0
 

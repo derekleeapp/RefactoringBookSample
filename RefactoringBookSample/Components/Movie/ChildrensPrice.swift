@@ -1,8 +1,4 @@
 class ChildrensPrice: Price {
-    override func getPriceCode() -> Int {
-        return Movie.Childrens
-    }
-
     override func getCharge(daysRented: Int) -> Double {
         var result: Double = 1.5
 
