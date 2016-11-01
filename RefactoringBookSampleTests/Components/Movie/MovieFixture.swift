@@ -4,22 +4,19 @@ struct MovieFixture {
 
     static func NewRelease() -> Movie {
         return Movie(
-            title: "Hunger Games",
-            priceCode: Movie.NewRelease
+            newReleaseMovieTitle: "Hunger Games"
         )
     }
 
     static func Regular() -> Movie {
         return Movie(
-            title: "Die Hard",
-            priceCode: Movie.Regular
+            regularMovieTitle: "Die Hard"
         )
     }
 
     static func Childrens() -> Movie {
         return Movie(
-            title: "Minions",
-            priceCode: Movie.Childrens
+            childrensMovieTitle: "Minions"
         )
     }
 
