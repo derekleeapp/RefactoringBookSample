@@ -19,13 +19,7 @@ class Customer {
 
         // determine amounts for each line
         for each in rentals {
-            // add frequent renter points
-            frequentRenterPoints += 1
-
-            // add bonus for a two day new release rental
-            if (each.movie.priceCode == Movie.NewRelease && each.daysRented > 1) {
-                frequentRenterPoints += 1
-            }
+            frequentRenterPoints += each.getFrequentRenterPoints();
 
             // show figures for this rental
             result += "\t\(each.movie.title)\t\(each.getCharge())\n"
