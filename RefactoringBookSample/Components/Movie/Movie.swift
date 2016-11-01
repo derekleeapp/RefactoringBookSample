@@ -4,7 +4,27 @@ class Movie {
     static let NewRelease = 1;
 
     let title: String
-    private var priceCode: Int
+    private var priceCode: Int {
+        get {
+            return price?.getPriceCode() ?? -1
+        }
+        set(value) {
+            switch value {
+            case Movie.Regular:
+                price = RegularPrice()
+
+            case Movie.NewRelease:
+                price = NewReleasePrice()
+
+            case Movie.Childrens:
+                price = ChildrensPrice()
+
+            default:
+                break
+            }
+        }
+    }
+    private var price: Price?
 
     init(title: String, priceCode: Int) {
         self.title = title
