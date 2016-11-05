@@ -69,6 +69,5 @@ class Customer {
 extension Customer: Equatable {}
 
 func ==(lhs: Customer, rhs: Customer) -> Bool {
-    return lhs.name == rhs.name &&
-        lhs.rentals == rhs.rentals
+    return lhs.name == rhs.name
 }

@@ -1,4 +1,11 @@
-class Rental {
+protocol Rental {
+    var movie: Movie { get }
+
+    func getCharge() -> Double
+    func getFrequentRenterPoints() -> Int
+}
+
+class StandardRental: Rental {
     // MARK: - Properties
     let movie: Movie
     private let daysRented: Int
@@ -19,9 +26,9 @@ class Rental {
     }
 }
 
-extension Rental: Equatable {}
+extension StandardRental: Equatable {}
 
-func ==(lhs: Rental, rhs: Rental) -> Bool {
+func ==(lhs: StandardRental, rhs: StandardRental) -> Bool {
     return lhs.movie == rhs.movie &&
         lhs.daysRented == rhs.daysRented
 }

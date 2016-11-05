@@ -12,7 +12,7 @@ class CustomerTest: QuickSpec {
         }
 
         it("initializes a new customer without any rentals") {
-            expect(customer.rentals).to(equal([]))
+            expect(customer.rentals.count).to(equal(0))
         }
 
         it("adds a rental to the list of rentals") {
@@ -21,128 +21,16 @@ class CustomerTest: QuickSpec {
 
 
             let expectedRentals = [newReleaseRental]
-            expect(customer.rentals).to(equal(expectedRentals))
+            expect(customer.rentals.count).to(equal(expectedRentals.count))
+            expect(customer.rentals.first as? StandardRental).to(equal(expectedRentals.first))
         }
 
         describe("the text-only statement") {
-
-            it("indicates when there have been no rentals") {
-                let actualStatement = customer.statement()
-
-
-                let expectedStatement =
-                    "Rental Record for John Doe\n" +
-                    "Amount owed is 0.0\n" +
-                    "You earned 0 frequent renter points"
-                expect(actualStatement).to(equal(expectedStatement))
-            }
-
-            describe("regular rentals") {
-                it("reflects charges and points when rented for one day") {
-                    let regularRental = RentalFixture.Regular(days: 1)
-                    customer.addRental(regularRental)
-
-
-                    let actualStatement = customer.statement()
-
-
-                    let expectedStatement =
-                        "Rental Record for John Doe\n" +
-                        "\tDie Hard\t2.0\n" +
-                        "Amount owed is 2.0\nYou earned 1 frequent renter points"
-                    expect(actualStatement).to(equal(expectedStatement))
-                }
-
-                it("reflects charges and points when rented for multiple days") {
-                    let regularRental = RentalFixture.Regular(days: 3)
-                    customer.addRental(regularRental)
-
-
-                    let actualStatement = customer.statement()
-
-
-                    let expectedStatement =
-                        "Rental Record for John Doe\n" +
-                        "\tDie Hard\t3.5\n" +
-                        "Amount owed is 3.5\nYou earned 1 frequent renter points"
-                    expect(actualStatement).to(equal(expectedStatement))
-                }
-            }
-
-            describe("new release rentals") {
-                it("reflects charges and points when rented for one day") {
-                    let newReleaseRental = RentalFixture.NewRelease(days: 1)
-                    customer.addRental(newReleaseRental)
-
-
-                    let actualStatement = customer.statement()
-
-
-                    let expectedStatement =
-                        "Rental Record for John Doe\n" +
-                            "\tHunger Games\t3.0\n" +
-                    "Amount owed is 3.0\nYou earned 1 frequent renter points"
-                    expect(actualStatement).to(equal(expectedStatement))
-                }
-
-                it("reflects charges and points when rented for multiple days") {
-                    let newReleaseRental = RentalFixture.NewRelease(days: 2)
-                    customer.addRental(newReleaseRental)
-
-
-                    let actualStatement = customer.statement()
-
-
-                    let expectedStatement =
-                        "Rental Record for John Doe\n" +
-                            "\tHunger Games\t6.0\n" +
-                    "Amount owed is 6.0\nYou earned 2 frequent renter points"
-                    XCTAssertEqual(actualStatement, expectedStatement)
-                    expect(actualStatement).to(equal(expectedStatement))
-                }
-            }
-
-            describe("childrens rentals") {
-                it("reflects charges and points when rented for one day") {
-                    let childrensRental = RentalFixture.Childrens(days: 1)
-                    customer.addRental(childrensRental)
-
-
-                    let actualStatement = customer.statement()
-
-
-                    let expectedStatement =
-                        "Rental Record for John Doe\n" +
-                            "\tMinions\t1.5\n" +
-                    "Amount owed is 1.5\nYou earned 1 frequent renter points"
-                    expect(actualStatement).to(equal(expectedStatement))
-                }
-
-                it("reflects charges and points when rented for multiple days") {
-                    let childrensRental = RentalFixture.Childrens(days: 4)
-                    customer.addRental(childrensRental)
-
-
-                    let actualStatement = customer.statement()
-
-
-                    let expectedStatement =
-                        "Rental Record for John Doe\n" +
-                            "\tMinions\t3.0\n" +
-                    "Amount owed is 3.0\nYou earned 1 frequent renter points"
-                    expect(actualStatement).to(equal(expectedStatement))
-                }
-            }
-
-            it("reflects charges and points for multiple rentals") {
-                let regularRental = RentalFixture.Regular(days: 1)
-                customer.addRental(regularRental)
-
-                let newReleaseRental = RentalFixture.NewRelease(days: 1)
-                customer.addRental(newReleaseRental)
-
-                let childrensRental = RentalFixture.Childrens(days: 1)
-                customer.addRental(childrensRental)
+            it("reflects charges and points") {
+                let fakeRental = FakeRental(movie: MovieFixture.Regular())
+                fakeRental.getCharge_returnValue = 10.0
+                fakeRental.getFrequentRenterPoints_returnValue = 1
+                customer.addRental(fakeRental)
 
 
                 let actualStatement = customer.statement()
@@ -150,18 +38,18 @@ class CustomerTest: QuickSpec {
 
                 let expectedStatement =
                     "Rental Record for John Doe\n" +
-                    "\tDie Hard\t2.0\n" +
-                    "\tHunger Games\t3.0\n" +
-                    "\tMinions\t1.5\n" +
-                    "Amount owed is 6.5\nYou earned 3 frequent renter points"
+                    "\tDie Hard\t10.0\n" +
+                    "Amount owed is 10.0\nYou earned 1 frequent renter points"
                 expect(actualStatement).to(equal(expectedStatement))
             }
         }
 
         describe("the html statement") {
-            it("reflects charges and points when a regular movie is rented for one day") {
-                let regularRental = RentalFixture.Regular(days: 1)
-                customer.addRental(regularRental)
+            it("reflects charges and points") {
+                let fakeRental = FakeRental(movie: MovieFixture.Regular())
+                fakeRental.getCharge_returnValue = 10.0
+                fakeRental.getFrequentRenterPoints_returnValue = 1
+                customer.addRental(fakeRental)
 
 
                 let actualStatement = customer.htmlStatement()
@@ -169,8 +57,8 @@ class CustomerTest: QuickSpec {
 
                 let expectedStatement =
                     "<H1>Rentals for <EM>John Doe</EM></H1><P>\n" +
-                    "Die Hard: 2.0<BR>\n" +
-                    "<P>You owe <EM>2.0</EM><P>\n" +
+                    "Die Hard: 10.0<BR>\n" +
+                    "<P>You owe <EM>10.0</EM><P>\n" +
                     "On this rental you earned <EM>1</EM> frequent renter points<P>"
                 expect(actualStatement).to(equal(expectedStatement))
             }
