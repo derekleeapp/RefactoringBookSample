@@ -26,5 +26,27 @@ class ChildrensPriceTest: QuickSpec {
                 expect(charge).to(equal(3))
             }
         }
+
+        describe("frequent renter points") {
+            it("calculates the frequent renter points for a single day rental") {
+                let childrensPrice = ChildrensPrice()
+
+
+                let points = childrensPrice.getFrequentRenterPoints(1)
+
+
+                expect(points).to(equal(1))
+            }
+
+            it("calculates the frequent renter points for a multi-day rental") {
+                let childrensPrice = ChildrensPrice()
+
+
+                let points = childrensPrice.getFrequentRenterPoints(3)
+
+
+                expect(points).to(equal(1))
+            }
+        }
     }
 }

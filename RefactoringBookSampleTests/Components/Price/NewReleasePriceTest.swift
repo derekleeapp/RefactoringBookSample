@@ -26,6 +26,28 @@ class NewReleasePriceTest: QuickSpec {
                 expect(charge).to(equal(9))
             }
         }
+
+        describe("frequent renter points") {
+            it("calculates the frequent renter points for a single day rental") {
+                let newReleasePrice = NewReleasePrice()
+
+
+                let points = newReleasePrice.getFrequentRenterPoints(1)
+
+
+                expect(points).to(equal(1))
+            }
+
+            it("calculates the frequent renter points for a multi-day rental") {
+                let newReleasePrice = NewReleasePrice()
+
+
+                let points = newReleasePrice.getFrequentRenterPoints(3)
+
+
+                expect(points).to(equal(2))
+            }
+        }
     }
 
 }

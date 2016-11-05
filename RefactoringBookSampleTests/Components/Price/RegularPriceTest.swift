@@ -26,6 +26,28 @@ class RegularPriceTest: QuickSpec {
                 expect(charge).to(equal(3.5))
             }
         }
+
+        describe("frequent renter points") {
+            it("calculates the frequent renter points for a single day rental") {
+                let regularPrice = RegularPrice()
+
+
+                let points = regularPrice.getFrequentRenterPoints(1)
+
+
+                expect(points).to(equal(1))
+            }
+
+            it("calculates the frequent renter points for a multi-day rental") {
+                let regularPrice = RegularPrice()
+
+
+                let points = regularPrice.getFrequentRenterPoints(3)
+
+
+                expect(points).to(equal(1))
+            }
+        }
     }
 
 }
