@@ -25,14 +25,16 @@ class CustomerTest: QuickSpec {
             expect(customer.rentals.first as? StandardRental).to(equal(expectedRentals.first))
         }
 
-        describe("the text-only statement") {
-            it("reflects charges and points") {
+        describe("the customer statement") {
+
+            beforeEach {
                 let fakeRental = FakeRental(movie: MovieFixture.Regular())
                 fakeRental.getCharge_returnValue = 10.0
                 fakeRental.getFrequentRenterPoints_returnValue = 1
                 customer.addRental(fakeRental)
+            }
 
-
+            it("renders the text only statement") {
                 let actualStatement = customer.statement()
 
 
@@ -42,16 +44,8 @@ class CustomerTest: QuickSpec {
                     "Amount owed is 10.0\nYou earned 1 frequent renter points"
                 expect(actualStatement).to(equal(expectedStatement))
             }
-        }
 
-        describe("the html statement") {
-            it("reflects charges and points") {
-                let fakeRental = FakeRental(movie: MovieFixture.Regular())
-                fakeRental.getCharge_returnValue = 10.0
-                fakeRental.getFrequentRenterPoints_returnValue = 1
-                customer.addRental(fakeRental)
-
-
+            it("renders the HTML statement") {
                 let actualStatement = customer.htmlStatement()
 
 
