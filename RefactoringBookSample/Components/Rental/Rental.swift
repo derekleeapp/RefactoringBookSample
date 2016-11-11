@@ -29,6 +29,6 @@ class StandardRental: Rental {
 extension StandardRental: Equatable {}
 
 func ==(lhs: StandardRental, rhs: StandardRental) -> Bool {
-    return lhs.movie == rhs.movie &&
+    return lhs.movie as? StandardMovie == rhs.movie as? StandardMovie &&
         lhs.daysRented == rhs.daysRented
 }

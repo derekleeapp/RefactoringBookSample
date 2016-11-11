@@ -1,4 +1,11 @@
-class Movie {
+protocol Movie {
+    var title: String { get }
+
+    func getCharge(daysRented: Int) -> Double
+    func getFrequentRenterPoints(daysRented: Int) -> Int
+}
+
+class StandardMovie: Movie {
     // MARK: - Properties
     let title: String
     private var price: Price
@@ -29,8 +36,8 @@ class Movie {
     }
 }
 
-extension Movie: Equatable {}
+extension StandardMovie: Equatable {}
 
-func ==(lhs: Movie, rhs: Movie) -> Bool {
+func ==(lhs: StandardMovie, rhs: StandardMovie) -> Bool {
     return lhs.title == rhs.title
 }

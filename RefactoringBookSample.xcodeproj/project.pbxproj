@@ -20,6 +20,7 @@
 		520ACE921DC95CB300118BB2 /* NewReleasePriceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE911DC95CB300118BB2 /* NewReleasePriceTest.swift */; };
 		520ACE941DC95E9400118BB2 /* ChildrensPriceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE931DC95E9400118BB2 /* ChildrensPriceTest.swift */; };
 		520ACE961DCDAB8D00118BB2 /* FakeRental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE951DCDAB8D00118BB2 /* FakeRental.swift */; };
+		520ACE981DCDB20F00118BB2 /* FakeMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520ACE971DCDB20F00118BB2 /* FakeMovie.swift */; };
 		523D68521DC314D600BF9119 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523D68501DC314D600BF9119 /* Nimble.framework */; };
 		523D68531DC314D600BF9119 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523D68511DC314D600BF9119 /* Quick.framework */; };
 		523D68561DC3150D00BF9119 /* Nimble.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = 523D68501DC314D600BF9119 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -74,6 +75,7 @@
 		520ACE911DC95CB300118BB2 /* NewReleasePriceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewReleasePriceTest.swift; sourceTree = "<group>"; };
 		520ACE931DC95E9400118BB2 /* ChildrensPriceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildrensPriceTest.swift; sourceTree = "<group>"; };
 		520ACE951DCDAB8D00118BB2 /* FakeRental.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeRental.swift; sourceTree = "<group>"; };
+		520ACE971DCDB20F00118BB2 /* FakeMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeMovie.swift; sourceTree = "<group>"; };
 		523D68501DC314D600BF9119 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		523D68511DC314D600BF9119 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		523D68581DC86A6600BF9119 /* RentalTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RentalTest.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				520ACE891DC16DB300118BB2 /* MovieFixture.swift */,
+				520ACE971DCDB20F00118BB2 /* FakeMovie.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 			files = (
 				520ACE961DCDAB8D00118BB2 /* FakeRental.swift in Sources */,
 				520ACE8A1DC16DB300118BB2 /* MovieFixture.swift in Sources */,
+				520ACE981DCDB20F00118BB2 /* FakeMovie.swift in Sources */,
 				523D68591DC86A6600BF9119 /* RentalTest.swift in Sources */,
 				520ACE921DC95CB300118BB2 /* NewReleasePriceTest.swift in Sources */,
 				520ACE871DC0284700118BB2 /* CustomerTest.swift in Sources */,

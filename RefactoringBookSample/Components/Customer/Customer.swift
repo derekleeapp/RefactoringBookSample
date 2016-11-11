@@ -45,6 +45,7 @@ class Customer {
         return result
     }
 
+    // MARK: - Private Methods
     private func getTotalCharge() -> Double {
         var result: Double = 0.0
 
