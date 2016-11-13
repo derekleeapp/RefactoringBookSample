@@ -5,10 +5,10 @@ import Nimble
 class CustomerTest: QuickSpec {
 
     override func spec() {
-        var customer: Customer!
+        var customer: StandardCustomer!
 
         beforeEach {
-            customer = Customer(name: "John Doe")
+            customer = StandardCustomer(name: "John Doe")
         }
 
         it("initializes a new customer without any rentals") {

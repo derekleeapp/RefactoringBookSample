@@ -1,4 +1,10 @@
-class Customer {
+protocol Customer {
+    mutating func addRental(rental: Rental)
+    func statement() -> String
+    func htmlStatement() -> String
+}
+
+struct StandardCustomer {
     // MARK: - Properties
     let name: String
     private(set) var rentals: [Rental]
@@ -8,9 +14,11 @@ class Customer {
         self.name = name
         self.rentals = []
     }
+}
 
-    // MARK: - Public Methods
-    func addRental(rental: Rental) {
+// MARK: - Customer
+extension StandardCustomer: Customer {
+    mutating func addRental(rental: Rental) {
         rentals.append(rental)
     }
 
@@ -39,8 +47,10 @@ class Customer {
 
         return result
     }
+}
 
-    // MARK: - Private Methods
+// MARK: - Private Methods
+extension StandardCustomer {
     private func getTotalCharge() -> Double {
         var result = 0.0
 
@@ -63,8 +73,8 @@ class Customer {
 }
 
 // MARK: - Equatable
-extension Customer: Equatable {}
+extension StandardCustomer: Equatable {}
 
-func ==(lhs: Customer, rhs: Customer) -> Bool {
+func ==(lhs: StandardCustomer, rhs: StandardCustomer) -> Bool {
     return lhs.name == rhs.name
 }
