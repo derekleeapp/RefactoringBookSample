@@ -10,7 +10,7 @@ class NewReleasePriceTest: QuickSpec {
                 let newReleasePrice = NewReleasePrice()
 
 
-                let charge = newReleasePrice.getCharge(1)
+                let charge = newReleasePrice.getCharge(daysRented: 1)
 
 
                 expect(charge).to(equal(3))
@@ -20,7 +20,7 @@ class NewReleasePriceTest: QuickSpec {
                 let newReleasePrice = NewReleasePrice()
 
 
-                let charge = newReleasePrice.getCharge(3)
+                let charge = newReleasePrice.getCharge(daysRented: 3)
 
 
                 expect(charge).to(equal(9))
@@ -32,7 +32,7 @@ class NewReleasePriceTest: QuickSpec {
                 let newReleasePrice = NewReleasePrice()
 
 
-                let points = newReleasePrice.getFrequentRenterPoints(1)
+                let points = newReleasePrice.getFrequentRenterPoints(daysRented: 1)
 
 
                 expect(points).to(equal(1))
@@ -42,7 +42,7 @@ class NewReleasePriceTest: QuickSpec {
                 let newReleasePrice = NewReleasePrice()
 
 
-                let points = newReleasePrice.getFrequentRenterPoints(3)
+                let points = newReleasePrice.getFrequentRenterPoints(daysRented: 3)
 
 
                 expect(points).to(equal(2))

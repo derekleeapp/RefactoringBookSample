@@ -1,8 +1,8 @@
 protocol Movie {
     var title: String { get }
 
-    func getCharge(daysRented: Int) -> Double
-    func getFrequentRenterPoints(daysRented: Int) -> Int
+    func getCharge(daysRented daysRented: Int) -> Double
+    func getFrequentRenterPoints(daysRented daysRented: Int) -> Int
 }
 
 struct StandardMovie {
@@ -29,12 +29,12 @@ struct StandardMovie {
 
 // MARK: - Movie
 extension StandardMovie: Movie {
-    func getCharge(daysRented: Int) -> Double {
-        return price.getCharge(daysRented)
+    func getCharge(daysRented daysRented: Int) -> Double {
+        return price.getCharge(daysRented: daysRented)
     }
 
-    func getFrequentRenterPoints(daysRented: Int) -> Int {
-        return price.getFrequentRenterPoints(daysRented)
+    func getFrequentRenterPoints(daysRented daysRented: Int) -> Int {
+        return price.getFrequentRenterPoints(daysRented: daysRented)
     }
 }
 

@@ -8,13 +8,13 @@ class FakeMovie: Movie {
     }
 
     private(set) var getCharge_arg: Int = -1
-    func getCharge(daysRented: Int) -> Double {
+    func getCharge(daysRented daysRented: Int) -> Double {
         getCharge_arg = daysRented
         return 0.0
     }
 
     private(set) var getFrequentRenterPoints_arg: Int = -1
-    func getFrequentRenterPoints(daysRented: Int) -> Int {
+    func getFrequentRenterPoints(daysRented daysRented: Int) -> Int {
         getFrequentRenterPoints_arg = daysRented
         return 0
     }

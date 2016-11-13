@@ -10,7 +10,7 @@ class ChildrensPriceTest: QuickSpec {
                 let childrensPrice = ChildrensPrice()
 
 
-                let charge = childrensPrice.getCharge(1)
+                let charge = childrensPrice.getCharge(daysRented: 1)
 
 
                 expect(charge).to(equal(1.5))
@@ -20,7 +20,7 @@ class ChildrensPriceTest: QuickSpec {
                 let childrensPrice = ChildrensPrice()
 
 
-                let charge = childrensPrice.getCharge(4)
+                let charge = childrensPrice.getCharge(daysRented: 4)
 
 
                 expect(charge).to(equal(3))
@@ -32,7 +32,7 @@ class ChildrensPriceTest: QuickSpec {
                 let childrensPrice = ChildrensPrice()
 
 
-                let points = childrensPrice.getFrequentRenterPoints(1)
+                let points = childrensPrice.getFrequentRenterPoints(daysRented: 1)
 
 
                 expect(points).to(equal(1))
@@ -42,7 +42,7 @@ class ChildrensPriceTest: QuickSpec {
                 let childrensPrice = ChildrensPrice()
 
 
-                let points = childrensPrice.getFrequentRenterPoints(3)
+                let points = childrensPrice.getFrequentRenterPoints(daysRented: 3)
 
 
                 expect(points).to(equal(1))

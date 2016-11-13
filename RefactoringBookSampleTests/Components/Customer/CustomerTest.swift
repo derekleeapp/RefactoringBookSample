@@ -26,7 +26,6 @@ class CustomerTest: QuickSpec {
         }
 
         describe("the customer statement") {
-
             beforeEach {
                 let fakeRental = FakeRental(movie: MovieFixture.Regular())
                 fakeRental.getCharge_returnValue = 10.0

@@ -1,5 +1,5 @@
 struct ChildrensPrice: Price {
-    func getCharge(daysRented: Int) -> Double {
+    func getCharge(daysRented daysRented: Int) -> Double {
         var result = 1.5
 
         if (daysRented > 3) {
@@ -9,7 +9,7 @@ struct ChildrensPrice: Price {
         return result
     }
 
-    func getFrequentRenterPoints(daysRented: Int) -> Int {
+    func getFrequentRenterPoints(daysRented daysRented: Int) -> Int {
         return 1
     }
 }

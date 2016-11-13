@@ -20,11 +20,11 @@ struct StandardRental {
 // MARK: - Rental
 extension StandardRental: Rental {
     func getCharge() -> Double {
-        return movie.getCharge(daysRented)
+        return movie.getCharge(daysRented: daysRented)
     }
 
     func getFrequentRenterPoints() -> Int {
-        return movie.getFrequentRenterPoints(daysRented)
+        return movie.getFrequentRenterPoints(daysRented: daysRented)
     }
 }
 
