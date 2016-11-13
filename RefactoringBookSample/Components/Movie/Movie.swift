@@ -5,7 +5,7 @@ protocol Movie {
     func getFrequentRenterPoints(daysRented: Int) -> Int
 }
 
-class StandardMovie: Movie {
+struct StandardMovie {
     // MARK: - Properties
     let title: String
     private var price: Price
@@ -25,8 +25,10 @@ class StandardMovie: Movie {
         self.title = title
         price = ChildrensPrice()
     }
+}
 
-    // MARK: - Public Methods
+// MARK: - Movie
+extension StandardMovie: Movie {
     func getCharge(daysRented: Int) -> Double {
         return price.getCharge(daysRented)
     }
@@ -36,6 +38,7 @@ class StandardMovie: Movie {
     }
 }
 
+// MARK: - Equatable
 extension StandardMovie: Equatable {}
 
 func ==(lhs: StandardMovie, rhs: StandardMovie) -> Bool {

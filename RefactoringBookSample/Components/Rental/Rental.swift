@@ -5,7 +5,7 @@ protocol Rental {
     func getFrequentRenterPoints() -> Int
 }
 
-class StandardRental: Rental {
+struct StandardRental {
     // MARK: - Properties
     let movie: Movie
     private let daysRented: Int
@@ -15,8 +15,10 @@ class StandardRental: Rental {
         self.movie = movie
         self.daysRented = daysRented
     }
+}
 
-    // MARK: - Public Methods
+// MARK: - Rental
+extension StandardRental: Rental {
     func getCharge() -> Double {
         return movie.getCharge(daysRented)
     }
@@ -26,9 +28,11 @@ class StandardRental: Rental {
     }
 }
 
+// MARK: - Equatable
 extension StandardRental: Equatable {}
 
 func ==(lhs: StandardRental, rhs: StandardRental) -> Bool {
-    return lhs.movie as? StandardMovie == rhs.movie as? StandardMovie &&
+    return
+        lhs.movie as? StandardMovie == rhs.movie as? StandardMovie &&
         lhs.daysRented == rhs.daysRented
 }

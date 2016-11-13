@@ -15,15 +15,12 @@ class Customer {
     }
 
     func statement() -> String {
-        var result: String = "Rental Record for \(name)\n"
+        var result = "Rental Record for \(name)\n"
 
-        // determine amounts for each line
         for each in rentals {
-            // show figures for this rental
             result += "\t\(each.movie.title)\t\(each.getCharge())\n"
         }
 
-        // add footer lines
         result += "Amount owed is \(getTotalCharge())\n"
         result += "You earned \(getTotalFrequentRenterPoints()) frequent renter points"
 
@@ -34,11 +31,9 @@ class Customer {
         var result: String = "<H1>Rentals for <EM>\(name)</EM></H1><P>\n"
 
         for each in rentals {
-            // show figures for this rental
             result += "\(each.movie.title): \(each.getCharge())<BR>\n"
         }
 
-        // add footer lines
         result += "<P>You owe <EM>\(getTotalCharge())</EM><P>\n"
         result += "On this rental you earned <EM>\(getTotalFrequentRenterPoints())</EM> frequent renter points<P>"
 
@@ -47,7 +42,7 @@ class Customer {
 
     // MARK: - Private Methods
     private func getTotalCharge() -> Double {
-        var result: Double = 0.0
+        var result = 0.0
 
         for each in rentals {
             result += each.getCharge()
@@ -57,7 +52,7 @@ class Customer {
     }
 
     private func getTotalFrequentRenterPoints() -> Int {
-        var result: Int = 0
+        var result = 0
 
         for each in rentals {
             result += each.getFrequentRenterPoints()
@@ -67,6 +62,7 @@ class Customer {
     }
 }
 
+// MARK: - Equatable
 extension Customer: Equatable {}
 
 func ==(lhs: Customer, rhs: Customer) -> Bool {
